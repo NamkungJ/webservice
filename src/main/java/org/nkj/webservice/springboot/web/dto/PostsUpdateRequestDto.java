@@ -6,13 +6,13 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class PostUpdateRequestDto { // 게시글 업데이트를 위한 Dto
+public class PostsUpdateRequestDto { // 게시글 업데이트를 위한 Dto
 
     private String title;
     private String content;
 
     @Builder
-    public PostUpdateRequestDto(String title, String content) {
+    public PostsUpdateRequestDto(String title, String content) {
         this.title = title;
         this.content = content;
     }

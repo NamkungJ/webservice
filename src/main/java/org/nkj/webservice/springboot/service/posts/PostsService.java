@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.nkj.webservice.springboot.domain.posts.Posts;
 import org.nkj.webservice.springboot.domain.posts.PostsRepository;
 import org.nkj.webservice.springboot.web.dto.PostsListResponseDto;
-import org.nkj.webservice.springboot.web.dto.PostUpdateRequestDto;
+import org.nkj.webservice.springboot.web.dto.PostsUpdateRequestDto;
 import org.nkj.webservice.springboot.web.dto.PostsResponseDto;
 import org.nkj.webservice.springboot.web.dto.PostsSaveRequestDto;
 import org.springframework.stereotype.Service;
@@ -27,7 +27,7 @@ public class PostsService {
 
     // 수정
     @Transactional
-    public Long update(Long id, PostUpdateRequestDto requestDto) {
+    public Long update(Long id, PostsUpdateRequestDto requestDto) {
         Posts posts = postsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
 

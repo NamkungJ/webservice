@@ -35,9 +35,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 	compile('org.springframework.session:spring-session-jdbc')
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-test {
-	useJUnitPlatform()
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile("org.springframework.security:spring-security-test")
 }

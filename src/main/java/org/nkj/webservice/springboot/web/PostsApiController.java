@@ -2,7 +2,7 @@ package org.nkj.webservice.springboot.web;
 
 import lombok.RequiredArgsConstructor;
 import org.nkj.webservice.springboot.service.posts.PostsService;
-import org.nkj.webservice.springboot.web.dto.PostUpdateRequestDto;
+import org.nkj.webservice.springboot.web.dto.PostsUpdateRequestDto;
 import org.nkj.webservice.springboot.web.dto.PostsResponseDto;
 import org.nkj.webservice.springboot.web.dto.PostsSaveRequestDto;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,7 @@ public class PostsApiController {
 
     // 수정 : json형태의 요청을 받아서 데이터를 수정 (json -> Dto -> 더티 체킹)
     @PutMapping("api/v1/posts/{id}")
-    public Long update(@PathVariable Long id, @RequestBody PostUpdateRequestDto requestDto) {
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
 
