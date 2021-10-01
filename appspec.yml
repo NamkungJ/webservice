@@ -1,9 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source:  /
-    destination: /home/ec2-user/app/step2/zip
-    overwrite: yes
+  - source:  /  # CodeDeploy가 전달한 파일 중 destination으로 이동할 대상 (/ : 전체)
+    destination: /home/ec2-user/app/step2/zip # source에 지정된 파일은 받을 위치
+    overwrite: yes   # 덮어쓰기
 
 permissions:
   - object: /
@@ -11,8 +11,8 @@ permissions:
     owner: ec2-user
     group: ec2-user
 
-hooks:
-  ApplicationStart:
-    - location: deploy.sh # 엔진엑스와 연결되어 있지 않은 스프링 부트를 종료합니다.
+hooks:  # 배포 단계에서 실행할 명령어
+  ApplicationStart: # ApplicationStart단계에서 ec2-user권한으로 deploy.sh실행
+    - location: deploy.sh
       timeout: 60
       runas: ec2-user
