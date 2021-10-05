@@ -8,3 +8,6 @@ health.sh : start.sh로 실행한 Spring Boot의 정상 여부 확인
 switch.sh : nginx가 바라보는 Spring Boot를 최신 버전으로 변경 (service nginx reload)
 
 profile.sh : profile과 포트를 체크하는 공용 script
+
+# 무중단 배포 구조
+![process](https://user-images.githubusercontent.com/59328815/135976784-8a1f2567-a4d1-4858-bb29-df114ba2cc35.png)
